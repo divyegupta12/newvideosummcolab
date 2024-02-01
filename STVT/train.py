@@ -317,7 +317,7 @@ def train_net(args):
                  }
 
         dataframe = pd.DataFrame(ddict)
-        csv_path = "./STVT/work_dirs/Record/csv/"+args.dataset+"/Record_" + str(args.roundtimes) + ".csv"
+        csv_path = "/content/newvideosummcolab/STVT/STVT/work_dirs/Record/csv/"+args.dataset+"/Record_" + str(args.roundtimes) + ".csv"
         dataframe.to_csv(csv_path, index=False, sep=',')
 
         epoch += 1
