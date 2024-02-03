@@ -85,7 +85,7 @@ def parse_args():
         help='number of internal epochs to test',
     )
     parser.add_argument('--optim', default='sgd', help='Model names.')
-    parser.add_argument('--lr', type=float, default=0.01, help='learning rate')
+    parser.add_argument('--lr', type=float, default=0.03, help='learning rate')
     parser.add_argument(
         '--warmup_epochs',
         type=float,
