@@ -72,7 +72,7 @@ def SumMe(args, distributed=False):
     test_arr = list(map(int, args.test_dataset.split(',')))
     train_arr = [i for i in all_arr if i not in test_arr]
 
-    file_dir = '/content/drive/MyDrive/SumMe.h5'
+    file_dir = '/content/SumMe.h5'
 
     video_amount = train_arr
     train_data = SumMeDataset(file_dir=file_dir, video_amount=video_amount, F_In_target=True)
