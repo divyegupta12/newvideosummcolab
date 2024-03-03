@@ -29,6 +29,7 @@ pd_lr = []
 pd_runtime = []
 pd_loss = []
 pd_F_measure_k = []
+pd_F_measure_k = 0
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Image classification')
