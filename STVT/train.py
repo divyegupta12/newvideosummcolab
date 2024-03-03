@@ -137,6 +137,7 @@ def val(model, val_loader, epoch, args):
         epoch = args.epochs - 1
 
     global pd_F_measure_k
+    global pd_max_F_measure_k
 
     with tqdm(
         total=len(val_loader), desc='Validate Epoch #{}'.format(epoch + 1)
@@ -189,10 +190,15 @@ def val(model, val_loader, epoch, args):
 
 
     save_model(model, args, fscore_k, epoch)
+    if(fscore_k > pd_max_F_measure_k):
+        pd_max_F_measure_k = fscore_k
+    
     print("test video number:")
     print(args.test_dataset)
     print("F_measure_k:")
     print(fscore_k)
+    print("Best F score:")
+    print(pd_max_F_measure_k)
 
 
 
@@ -293,6 +299,7 @@ def train_net(args):
     global pd_runtime
     global pd_loss
     global pd_F_measure_k
+    global pd_max_F_measure_k = 0
 
     while epoch < args.epochs:
         pd_epoch.append(epoch)
@@ -314,6 +321,7 @@ def train_net(args):
                  'runtime':pd_runtime,
                  'loss':pd_loss,
                  'F_measure_k':pd_F_measure_k,
+                 'max_F_score':pd_max_F_measure_k
                  }
 
         dataframe = pd.DataFrame(ddict)
