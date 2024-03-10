@@ -300,7 +300,7 @@ def train_net(args):
     global pd_runtime
     global pd_loss
     global pd_F_measure_k
-    global pd_max_F_measure_k = 0
+    global pd_max_F_measure_k
 
     while epoch < args.epochs:
         pd_epoch.append(epoch)
