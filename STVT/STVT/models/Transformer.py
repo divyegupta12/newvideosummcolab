@@ -1,5 +1,5 @@
 from torch import nn
-from STVT.models.Attention import SelfAttention
+from STVT.models.Attention import NewAttention
 
 
 class Residual(nn.Module):
@@ -66,7 +66,7 @@ class TransformerModel(nn.Module):
                         PreNormDrop(
                             dim,
                             dropout_rate,
-                            SelfAttention(
+                            NewAttention(
                                 dim, heads=heads, dropout_rate=attn_dropout_rate
                             ),
                         )
